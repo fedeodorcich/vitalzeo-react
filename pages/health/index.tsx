@@ -1,30 +1,17 @@
-import NavbarComponent from "./components/navbar.component"
-import Box from '@mui/material/Box';
-import CardComponent from './components/card.component';
-import CarrouselComponent from "./components/carrousel.component";
+import * as React from 'react';
+import CommonContainer from '../common';
+import NavbarComponent from '../../layout/navbar.component/navbar.component';
+import FooterComponent from '../../layout/footer/footer.component';
 
-const HealthContainer = ()=>{
-    return(
-        <>
-        <Box className="">
-        <NavbarComponent/>
-        <Box>
-            <Box className="zeo-primary">
-                <span className="text-9xl zeo-text-secondary" style={{fontFamily:'OswaldExtraLight'}}>Vital</span>
-                <span className="text-9xl zeo-text-secondary" style={{fontFamily:'OswaldRegular'}}>ZEO</span>
-            </Box>
-            <CarrouselComponent>
-                
-                <CardComponent/>
-                <CardComponent/>
-                <CardComponent/>
-                
-            </CarrouselComponent>
-        </Box>
-        </Box>
-           
-        </>
-    )
-}
 
-export default HealthContainer
+const HealthContainer = () => {
+  return (
+    <>
+    <NavbarComponent className='bg-gradient-to-r from-teal-600 via-teal-500 to-teal-300'/>
+    <CommonContainer/>
+    <FooterComponent className='bg-teal-600'/>
+    </>
+  );
+};
+
+export default HealthContainer;

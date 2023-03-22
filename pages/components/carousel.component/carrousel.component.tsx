@@ -1,25 +1,26 @@
-import React, { ReactNode, useState } from 'react';
-import { Box, IconButton, Paper } from '@mui/material';
-import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
+import React, { ReactNode } from 'react';
+import { Box } from '@mui/material';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export type CarouselProps = {
     children: ReactNode[];
+    styles:string
   }
   
   
    
 
-const CarrouselComponent = ({ children }:CarouselProps)=>{
+const CarrouselComponent = ({ children,styles }:CarouselProps)=>{
 
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows:true,
         responsive: [
           {
             breakpoint: 1024,
@@ -42,8 +43,9 @@ const CarrouselComponent = ({ children }:CarouselProps)=>{
       };
 
   return (
-    <Box>
-         <Slider {...settings} className="overflow-hidden ">
+    <Box className={styles}>
+         <h1 className="text-5xl text-white mb-10 pt-10">Ofertas</h1>
+         <Slider {...settings} className="overflow-hidden">
          {React.Children.map(children, (child, index) => (
           <Box className="">
             {child}

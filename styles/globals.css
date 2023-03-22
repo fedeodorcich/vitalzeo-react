@@ -31,3 +31,24 @@
 .zeo-text-secondary {
     color: #EC089D;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-regular {
+    font-family: 'OswaldRegular';
+}
+
+.text-extra-light {
+    font-family: 'OswaldExtraLight';
+}
+
+@media (prefers-color-scheme: dark) {
+    .unable-dark-mode {
+        background-color: white;
+        /* utilizado cuando el dispositivo está en modo oscuro */
+    }
+}

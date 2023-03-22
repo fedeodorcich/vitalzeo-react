@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import HomeContainer from './home/container/home.container';
+import HomeContainer from "./home";
 
 const Home:NextPage = ()=>{
   return (
