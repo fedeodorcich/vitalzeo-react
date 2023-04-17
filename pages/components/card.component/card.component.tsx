@@ -3,19 +3,31 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { ICard } from '../../common';
+import * as React from 'react';
 
 
 export type CardProps ={
+    primaryColor:string;
     card:ICard;
     handleOpenModal: (card:ICard) => void;
 }
 
-const CardComponent = ({card,handleOpenModal}:CardProps)=>{
+
+const CardComponent = ({card,handleOpenModal,primaryColor}:CardProps)=>{
+
+    const getColor=(primaryColor:string)=>{
+      switch(primaryColor){
+        case "blue": return "bg-blue-500"
+        case "teal": return "bg-teal-500"
+        case "rose": return "bg-rose-500"
+        default : return "bg-slate-200"
+      }
+    }
+
     return(
         <Card sx={{ maxWidth: 300 }} className="m-auto">
         <CardMedia
           component="img"
-          alt="green iguana"
           height="140"
           image={card.imagePath}
         />
@@ -26,7 +38,7 @@ const CardComponent = ({card,handleOpenModal}:CardProps)=>{
         </CardContent>
         <CardActions>
      
-            <Button color="primary" variant="contained" className="bg-teal-500" onClick={()=>{handleOpenModal(card)}}>Comprar</Button>
+            <Button variant="contained" className={getColor(primaryColor)} onClick={()=>{handleOpenModal(card)}}>Comprar</Button>
        
         </CardActions>
       </Card>

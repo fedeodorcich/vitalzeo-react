@@ -32,6 +32,15 @@ const CarrouselComponent = ({ children,styles }:CarouselProps)=>{
             }
           },
           {
+            breakpoint: 1182,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
             breakpoint: 600,
             settings: {
               slidesToShow: 1,

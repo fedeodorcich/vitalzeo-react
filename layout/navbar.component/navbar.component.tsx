@@ -5,18 +5,19 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import ListItemText from "@mui/material/ListItemText";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem/ListItem";
-import ListItemButton from "@mui/material/ListItemButton/ListItemButton";
 import { Menu, MenuItem } from "@mui/material";
+import { useRouter } from 'next/router';
 
 export type NavBarProps ={
     className:string
 }
 
 
+
+
 const NavbarComponent = ({className}:NavBarProps) => {
+
+  const router = useRouter();
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -61,9 +62,9 @@ const NavbarComponent = ({className}:NavBarProps) => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>VitalZEO Salud</MenuItem>
-        <MenuItem onClick={handleClose}>VitalZEO Animales</MenuItem>
-        <MenuItem onClick={handleClose}>VitalZEO Agricultura</MenuItem>
+        <MenuItem onClick={()=>{router.push('/health')}}>VitalZEO Salud</MenuItem>
+        <MenuItem onClick={()=>{router.push('/animals')}}>VitalZEO Animales</MenuItem>
+        <MenuItem onClick={()=>{router.push('/agro')}}>VitalZEO Agricultura</MenuItem>
       </Menu>
         
       

@@ -45,10 +45,10 @@ const router = useRouter();
             <Button color="primary" variant="contained" className="bg-teal-500" onClick={()=>{router.push('/health')}}>VitalZEO Salud</Button>
           </Grid>
           <Grid item>
-            <Button color="primary" variant="contained" className="bg-teal-500">VitalZEO Animales</Button>
+            <Button color="primary" variant="contained" className="bg-teal-500" onClick={()=>{router.push('/animals')}}>VitalZEO Animales</Button>
           </Grid>
           <Grid item>
-            <Button color="primary" variant="contained" className="bg-teal-500">VitalZEO Agricultura</Button>
+            <Button color="primary" variant="contained" className="bg-teal-500" onClick={()=>{router.push('/agro')}}>VitalZEO Agricultura</Button>
           </Grid>
         </Grid>
       </Grid>

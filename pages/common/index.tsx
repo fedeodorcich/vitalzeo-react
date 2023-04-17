@@ -16,7 +16,13 @@ export type ICard = {
   title: string;
 };
 
-const CommonContainer = () => {
+export type ICommonProps={
+  subName:string;
+  gradientsClasses:string;
+  primaryColor:string;
+}
+
+const CommonContainer = ({subName,gradientsClasses,primaryColor}:ICommonProps) => {
   const mockCards: ICard[] = [
     {
       imagePath: "assets/images/hero.jpg",
@@ -61,7 +67,7 @@ const CommonContainer = () => {
     <>
       <Box className="">
         <Box>
-          <Box className="bg-gradient-to-r from-teal-500 via-teal-400 to-teal-200 w-full h-96 ">
+          <Box className={gradientsClasses+" w-full h-96 "}>
             <Grid container spacing={2} className="mt-0 mx-auto container px-5 ">
               <Grid xs={6}>
                 <Box className="mt-20">
@@ -84,7 +90,7 @@ const CommonContainer = () => {
                       className="text-3xl text-white pl-3"
                       style={{ fontFamily: "OswaldExtraLight" }}
                     >
-                      Salud y Belleza
+                      {subName}
                     </span>
                   </div>
                 </Box>
@@ -128,13 +134,14 @@ const CommonContainer = () => {
             </div>
           </Box>
 
-          <Box className="bg-gradient-to-r from-teal-500 via-teal-400 to-teal-200">
+          <Box className={gradientsClasses}>
             <CarrouselComponent styles="container mx-auto pb-10 px-5">
               {mockCards.map((card, index) => (
                 <CardComponent
                   key={index}
                   card={card}
                   handleOpenModal={handleShowModal}
+                  primaryColor={primaryColor}
                 />
               ))}
             </CarrouselComponent>
