@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import WaitingComponent from "../components/waiting/waiting.component";
 
 const HomeContainer = () => {
 
@@ -38,20 +39,25 @@ const router = useRouter();
           container
           justifyContent="center"
           alignItems="center"
-          spacing={5}
+          spacing={{ xs: 2, md: 5 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
           sx={{ py: 4 }}
         >
-          <Grid item>
-            <Button color="primary" variant="contained" className="bg-teal-500" onClick={()=>{router.push('/health')}}>VitalZEO Salud</Button>
+          <Grid item  xs={1}  className="icon-link" onClick={()=>{router.push('/health')}}>
+            <div className="icons"></div>
+            <span className="mx-auto highlighter rounded-lg">VitalZEO Industrial</span>
           </Grid>
-          <Grid item>
-            <Button color="primary" variant="contained" className="bg-teal-500" onClick={()=>{router.push('/animals')}}>VitalZEO Animales</Button>
+          <Grid item xs={1}  className="icon-link" onClick={()=>{router.push('/industrial')}}>
+            <div className="icons"></div>
+            <span className="mx-auto highlighter rounded-lg">VitalZEO Industrial</span>
           </Grid>
-          <Grid item>
-            <Button color="primary" variant="contained" className="bg-teal-500" onClick={()=>{router.push('/agro')}}>VitalZEO Agricultura</Button>
+          <Grid item xs={1}  className="icon-link" onClick={()=>{router.push('/agro')}}>
+            <div className="icons"></div>
+            <span className="mx-auto highlighter rounded-lg">VitalZEO Agropecuario</span>
           </Grid>
         </Grid>
       </Grid>
+      <WaitingComponent/>
     </>
   );
 };

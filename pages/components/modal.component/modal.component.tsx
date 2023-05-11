@@ -22,48 +22,52 @@ const ModalComponent = ({ open, modalData, closeModal }: ModalProps) => {
       <Dialog open={open} onClose={closeModal}>
         <DialogTitle>{modalData?.title}</DialogTitle>
         <DialogContent>
-          <Grid container spacing={2} className="mt-5">
-            <Grid xs={6}>
-              <img
-                src={modalData?.imagePath}
-                loading="lazy"
-              />
+          <Grid container spacing={2} className="mt-2">
+            
+            <Grid xs={7}>
+              <img src={modalData?.imagePath} loading="lazy" className="rounded-lg"/>
             </Grid>
-            <Grid xs={6}>
-              <TextField
-                disabled
-                id="outlined-disabled"
-                label="CBU(BBVA)"
-                defaultValue="0170471020000000080606"
-                className="mt-5"
-              />
-              <TextField
-                disabled
-                id="outlined-disabled"
-                label="Mercado Pago (Envío de dinero)"
-                defaultValue="danielpunazzo.mp"
-                className="mt-5"
-              />
-              <TextField
-                disabled
-                id="outlined-disabled"
-                label="Nombre"
-                defaultValue="Daniel Felipe Punazzo "
-                className="mt-5"
-              />
-              <TextField
-                disabled
-                id="outlined-disabled"
-                label="Email"
-                defaultValue="comercial@vitalzeo.com.ar"
-                className="mt-5"
-              />
+
+            <Grid xs={5}>
+              <div className="mx-5 mt-0 container">
+                <TextField
+                  size="small"
+                  disabled
+                  id="outlined-disabled"
+                  label="CBU(BBVA)"
+                  defaultValue="0170471020000000080606"
+                  className="mt-0"
+                />
+                <TextField
+                  size="small"
+                  disabled
+                  id="outlined-disabled"
+                  label="Mercado Pago (Envío de dinero)"
+                  defaultValue="danielpunazzo.mp"
+                  className="mt-5"
+                />
+                <TextField
+                  size="small"
+                  disabled
+                  id="outlined-disabled"
+                  label="Nombre"
+                  defaultValue="Daniel Felipe Punazzo "
+                  className="mt-5"
+                />
+                <TextField
+                  size="small"
+                  disabled
+                  id="outlined-disabled"
+                  label="Email"
+                  defaultValue="comercial@vitalzeo.com.ar"
+                  className="mt-5"
+                />
+              </div>
             </Grid>
           </Grid>
         </DialogContent>
         <DialogActions>
-          <Button onClick={closeModal}>Cancel</Button>
-          <Button onClick={closeModal}>Subscribe</Button>
+          <Button onClick={closeModal}>Cerrar</Button>
         </DialogActions>
       </Dialog>
     </div>
